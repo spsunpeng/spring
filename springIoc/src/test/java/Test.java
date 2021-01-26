@@ -1,6 +1,5 @@
 import com.alibaba.druid.pool.DruidDataSource;
 import com.mashibing.bean.Person;
-import com.mashibing.factory.PersonFactoryBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

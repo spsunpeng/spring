@@ -2,7 +2,6 @@ package com.mashibing.factory;
 
 import com.mashibing.bean.Person;
 import org.springframework.beans.factory.FactoryBean;
-import org.springframework.cglib.proxy.Factory;
 
 /**
  * @author sunpeng
