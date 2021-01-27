@@ -1,5 +1,9 @@
 import com.mashibing.bean.Person;
+import com.mashibing.bean.Student;
 import com.mashibing.controller.PersonController;
+import com.mashibing.service.BaseService;
+import com.mashibing.service.StudentService;
+import com.mashibing.service.TeacherService;
 import com.sun.org.apache.bcel.internal.util.ClassPath;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +18,10 @@ public class MyTest {
     @Autowired
     private PersonController personController1; //启动类中@Autowired无效
 
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+
     @Test
     public void testPerson(){
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
         Person person1 = context.getBean("person", Person.class);
         System.out.println(person1);
 
@@ -25,12 +30,16 @@ public class MyTest {
 
         PersonController personController = context.getBean("personController", PersonController.class);
         personController.save();
-
-
     }
 
+    @Test
+    public void test2(){
+        StudentService studentService = context.getBean("studentService", StudentService.class);
+        studentService.save();
 
-
+        TeacherService teacherService = context.getBean("teacherService", TeacherService.class);
+        teacherService.save();
+    }
 
 }
 

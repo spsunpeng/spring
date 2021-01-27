@@ -1,6 +1,8 @@
 package com.mashibing.controller;
 
 import com.mashibing.service.PersonService;
+import com.mashibing.service.StudentService;
+import com.mashibing.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

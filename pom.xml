@@ -12,6 +12,7 @@
     <modules>
         <module>springIoc</module>
         <module>springAnnotation</module>
+        <module>springAop</module>
     </modules>
 
 

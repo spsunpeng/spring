@@ -1,19 +1,20 @@
 package com.mashibing.service;
 
-import com.mashibing.dao.PersonDao;
+import com.mashibing.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  * @author sunpeng
- * @Date 2021-01-26 16:05
+ * @Date 2021-01-27 11:27
  */
-@Service
-public class PersonService {
 
+public class BaseService<T> {
     @Autowired
-    private PersonDao personDao;
+    BaseDao<T> baseDao;
 
     public void save(){
-        personDao.save();    }
+        System.out.println("自动注入的对象："+baseDao);
+        baseDao.save();
+    }
 }
