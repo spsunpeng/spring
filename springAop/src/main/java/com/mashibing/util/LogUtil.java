@@ -14,6 +14,15 @@ public class LogUtil {
     }
 
     public static void stop(Method method ,Object ... objects){
-        System.out.println(method.getName()+"方法结束："+ Arrays.asList(objects));
+        System.out.println(method.getName()+"方法stop："+ Arrays.asList(objects));
     }
+
+    public static void exception(Method method ,Exception e){
+        System.out.println(method.getName()+"方法异常："+ e.getMessage());
+    }
+
+    public static void end(Method method){
+        System.out.println(method.getName()+"方法end...");
+    }
+
 }
