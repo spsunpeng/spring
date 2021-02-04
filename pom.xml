@@ -10,9 +10,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>springIoc</module>
-        <module>springAnnotation</module>
-        <module>springAop</module>
+        <module>springIoc_xml</module>
+        <module>springIoc_Annotation</module>
+        <module>springAop_Annotation</module>
+        <module>springAop_xml</module>
+        <module>springAop_transactional</module>
     </modules>
 
 

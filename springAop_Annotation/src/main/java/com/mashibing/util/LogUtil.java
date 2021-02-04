@@ -13,16 +13,16 @@ public class LogUtil {
         System.out.println(method.getName()+"方法开始："+ Arrays.asList(objects));
     }
 
-    public static void stop(Method method ,Object ... objects){
-        System.out.println(method.getName()+"方法stop："+ Arrays.asList(objects));
+    public static void AfterReturning(Method method ,Object ... objects){
+        System.out.println(method.getName()+"方法AfterReturning："+ Arrays.asList(objects));
     }
 
     public static void exception(Method method ,Exception e){
         System.out.println(method.getName()+"方法异常："+ e.getMessage());
     }
 
-    public static void end(Method method){
-        System.out.println(method.getName()+"方法end...");
+    public static void After(Method method){
+        System.out.println(method.getName()+"方法After...");
     }
 
 }

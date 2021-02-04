@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+">
+    
+    <bean id="myCalculator" class="com.mashibing.service.MyCalculatorImpl"></bean>
+    <bean id="logUtil" class="com.mashibing.util.LogUtil"></bean>
+    
+    <aop:config>
+        <aop:aspect ref="logUtil">
+            <aop:pointcut id="mypointcut" expression="execution(public * com.mashibing.service.*.*(..))"/>
+            <aop:before method="start" pointcut-ref="mypointcut"></aop:before>
+            <aop:after-returning method="stop" pointcut-ref="mypointcut" returning="result"></aop:after-returning>
+            <aop:after-throwing method="exception" pointcut-ref="mypointcut" throwing="e"></aop:after-throwing>
+            <aop:after method="end" pointcut-ref="mypointcut"></aop:after>
+            <aop:around method="around" pointcut-ref="mypointcut"></aop:around>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

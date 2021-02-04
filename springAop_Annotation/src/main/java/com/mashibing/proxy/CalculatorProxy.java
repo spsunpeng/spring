@@ -24,12 +24,11 @@ public class CalculatorProxy {
                 try{
                     LogUtil.start(method, args);
                     result = method.invoke(calculator, args);
-                    LogUtil.stop(method, result);
+                    LogUtil.AfterReturning(method, result);
                 }catch (Exception e){
                     LogUtil.exception(method, e);
-                }finally {
-                    LogUtil.end(method);
                 }
+                LogUtil.After(method);
                 return result;
             }
         };
