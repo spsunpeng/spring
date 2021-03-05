@@ -1,5 +1,6 @@
 import com.mashibing.bean.Person;
 import com.mashibing.bean.Student;
+import com.mashibing.bean.User;
 import com.mashibing.controller.PersonController;
 import com.mashibing.service.BaseService;
 import com.mashibing.service.StudentService;
@@ -19,6 +20,12 @@ public class MyTest {
     private PersonController personController1; //启动类中@Autowired无效
 
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+
+    @Test
+    public void testUser(){
+        User user = context.getBean("user", User.class);
+        System.out.println(user);
+    }
 
     @Test
     public void testPerson(){
